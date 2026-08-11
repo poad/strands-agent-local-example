@@ -12,6 +12,7 @@ import {
 } from '@eslint/compat';
 
 import { parser as tsParser, configs } from 'typescript-eslint';
+// eslint-disable-next-line import-x/no-named-as-default
 import reactRefresh from 'eslint-plugin-react-refresh';
 import js from '@eslint/js';
 
