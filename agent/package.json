@@ -39,7 +39,7 @@
     "@opentelemetry/sdk-trace-base": "^2.10.0",
     "@opentelemetry/sdk-trace-node": "^2.10.0",
     "@strands-agents/sdk": "^1.14.0",
-    "hono": "^4.13.4",
+    "hono": "^4.13.5",
     "uuid": "^14.0.2",
     "ws": "^8.21.3",
     "zod": "^4.4.3"
