@@ -14,7 +14,7 @@
     "@aws-amplify/ui-react": "^6.15.6",
     "@chatscope/chat-ui-kit-react": "^2.1.1",
     "@chatscope/chat-ui-kit-styles": "^1.4.0",
-    "@dotenvx/dotenvx": "^2.21.0",
+    "@dotenvx/dotenvx": "^2.22.0",
     "aws-amplify": "^6.20.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
