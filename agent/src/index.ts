@@ -1,14 +1,22 @@
 import { createAgent } from './agent.js';
+import { getAccessToken } from './observability/access-token-manager.js';
 import { init } from './observability/exporters.js';
 import { ChatRequest } from './types.js';
-import { getAccessToken } from './observability/access-token-manager.js';
-import { setupTracer } from '@strands-agents/sdk/telemetry';
-import { NodeTracerProvider, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-node';
-import { Agent, AgentResult, AgentStreamEvent, Interrupt, InterruptResponseContent, AfterInvocationEvent } from '@strands-agents/sdk';
+
 import { serve } from '@hono/node-server';
+import { NodeTracerProvider, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-node';
+import {
+  Agent,
+  AgentResult,
+  AgentStreamEvent,
+  Interrupt,
+  InterruptResponseContent,
+  AfterInvocationEvent,
+} from '@strands-agents/sdk';
+import { setupTracer } from '@strands-agents/sdk/telemetry';
 import { Hono } from 'hono';
-import { streamSSE } from 'hono/streaming';
 import { cors } from 'hono/cors';
+import { streamSSE } from 'hono/streaming';
 
 /** SDKの Interrupt から、フロントエンドに渡す分だけを取り出した型 */
 type InterruptPayload = Pick<Interrupt, 'id' | 'name' | 'reason'>;
@@ -46,9 +54,7 @@ app.post('/invocations', async (c) => {
       const provider = new NodeTracerProvider({
         spanProcessors: [
           // Configure OTLP endpoint programmatically
-          new SimpleSpanProcessor(
-            exporters.trace,
-          ),
+          new SimpleSpanProcessor(exporters.trace),
         ],
       });
       setupTracer({
@@ -75,8 +81,15 @@ app.post('/invocations', async (c) => {
       const event = step.value;
 
       // トークン単位のテキストデルタをそのままSSEで流す
-      if (event.type === 'modelStreamUpdateEvent' && event.event.type === 'modelContentBlockDeltaEvent' && event.event.delta?.type === 'textDelta') {
-        stream.writeSSE({ event: 'messageDelta', data: JSON.stringify({ text: event.event.delta.text }) });
+      if (
+        event.type === 'modelStreamUpdateEvent' &&
+        event.event.type === 'modelContentBlockDeltaEvent' &&
+        event.event.delta?.type === 'textDelta'
+      ) {
+        stream.writeSSE({
+          event: 'messageDelta',
+          data: JSON.stringify({ text: event.event.delta.text }),
+        });
       }
 
       step = await streamGen.next();

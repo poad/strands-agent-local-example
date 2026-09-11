@@ -1,4 +1,5 @@
 import { InterruptPayload } from '../types/index.js';
+
 import { useRef, useState, useEffect } from 'react';
 
 export function InterruptModal({
@@ -54,7 +55,9 @@ export function InterruptModal({
           {interrupt.name || '確認が必要です'}
         </h2>
         <p style={{ margin: '0 0 24px 0', color: '#666', whiteSpace: 'pre-wrap' }}>
-          {typeof interrupt.reason === 'string' ? interrupt.reason : JSON.stringify(interrupt.reason, null, 2)}
+          {typeof interrupt.reason === 'string'
+            ? interrupt.reason
+            : JSON.stringify(interrupt.reason, null, 2)}
         </p>
         <form onSubmit={handleSubmit}>
           <input
@@ -66,7 +69,9 @@ export function InterruptModal({
           />
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
             <button onClick={onCancel}>キャンセル</button>
-            <button onClick={handleSubmit} disabled={!response.trim()}>送信</button>
+            <button onClick={handleSubmit} disabled={!response.trim()}>
+              送信
+            </button>
           </div>
         </form>
       </div>

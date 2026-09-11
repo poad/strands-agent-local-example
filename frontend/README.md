@@ -14,12 +14,12 @@
 
 frontend/
 ├── src/
-│   ├── main.tsx                          # エントリポイント。/amplifyconfiguration.json を取得して Amplify.configure()
-│   ├── App.tsx                           # チャット画面本体。ストリーミングイベントのハンドリングとメッセージ表示
-│   ├── components/
-│   │   └── SignOut.tsx                   # サインアウトボタン
-│   └── service/
-│       └── AgentCoreRuntimeService.ts    # ローカルエージェントサーバーへの SSE リクエスト・イベントパース
+│ ├── main.tsx # エントリポイント。/amplifyconfiguration.json を取得して Amplify.configure()
+│ ├── App.tsx # チャット画面本体。ストリーミングイベントのハンドリングとメッセージ表示
+│ ├── components/
+│ │ └── SignOut.tsx # サインアウトボタン
+│ └── service/
+│ └── AgentCoreRuntimeService.ts # ローカルエージェントサーバーへの SSE リクエスト・イベントパース
 ├── public/
 ├── index.html
 ├── package.json
@@ -29,10 +29,10 @@ frontend/
 
 このアプリはビルド時の環境変数ではなく、実行時に静的ファイルとして配信される 2 つの JSON を `fetch` して初期化します。ローカル開発時は `frontend/public/` に手動で配置してください。
 
-| ファイル | 内容 | 用途 |
-| --- | --- | --- |
-| `/amplifyconfiguration.json` | Cognito `userPoolId` / `userPoolClientId` / `region` | `Amplify.configure()` に渡してサインイン機能を有効化 |
-| `/config.json` | `runtimeBaseUrl`（エージェントサーバーのベース URL、例：`http://localhost:8080`） | エージェントの invocations エンドポイント URL を組み立てる |
+| ファイル                     | 内容                                                                              | 用途                                                       |
+| ---------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| `/amplifyconfiguration.json` | Cognito `userPoolId` / `userPoolClientId` / `region`                              | `Amplify.configure()` に渡してサインイン機能を有効化       |
+| `/config.json`               | `runtimeBaseUrl`（エージェントサーバーのベース URL、例：`http://localhost:8080`） | エージェントの invocations エンドポイント URL を組み立てる |
 
 ### 配置例（`frontend/public/` 配下）
 

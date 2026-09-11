@@ -1,13 +1,12 @@
-import { runAgentTurn } from './service/AgentCoreRuntimeService.js';
-import { InterruptPayload, History } from './types/index.js';
 import { ChatWindow } from './components/chat-window.jsx';
 import { InterruptModal } from './components/interrupt-modal.jsx';
+import { runAgentTurn } from './service/AgentCoreRuntimeService.js';
+import { InterruptPayload, History } from './types/index.js';
+
 import { useState } from 'react';
 import './index.module.css';
 
-type MessageSegment =
-  | { type: 'text'; content: string }
-  | { type: 'tool'; toolCall: ToolCall };
+type MessageSegment = { type: 'text'; content: string } | { type: 'tool'; toolCall: ToolCall };
 
 const endpoint = 'http://localhost:8080';
 const url = `${endpoint}/invocations`;
@@ -15,11 +14,11 @@ const url = `${endpoint}/invocations`;
 type ToolCallStatus = 'streaming' | 'executing' | 'complete';
 
 interface ToolCall {
-  toolUseId: string
-  name: string
-  input: string
-  result?: string
-  status: ToolCallStatus
+  toolUseId: string;
+  name: string;
+  input: string;
+  result?: string;
+  status: ToolCallStatus;
 }
 
 const streamEventHandler = async (
@@ -28,10 +27,12 @@ const streamEventHandler = async (
   setIsLoading: (state: boolean) => void,
 ) => {
   console.log(event);
-  updateMessage([{
-    type: 'text',
-    content: event as string,
-  }]);
+  updateMessage([
+    {
+      type: 'text',
+      content: event as string,
+    },
+  ]);
   setIsLoading(false);
 };
 
@@ -40,7 +41,9 @@ function App() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [sessionId] = useState(() => crypto.randomUUID());
   const [currentInterrupt, setCurrentInterrupt] = useState<InterruptPayload | null>(null);
-  const [interruptResolve, setInterruptResolve] = useState<((response: string) => void) | null>(null);
+  const [interruptResolve, setInterruptResolve] = useState<((response: string) => void) | null>(
+    null,
+  );
 
   const updateMessage = (segments: MessageSegment[]) => {
     // Build content from text segments for backward compat
@@ -69,7 +72,7 @@ function App() {
     });
   };
 
-  async function invoke({ message, sessionId }: { message: string, sessionId: string }) {
+  async function invoke({ message, sessionId }: { message: string; sessionId: string }) {
     setIsLoading(true);
     await runAgentTurn({
       endpoint: url,
@@ -87,8 +90,7 @@ function App() {
         streamEventHandler(text, updateMessage, setIsLoading);
       },
       onMessage: (event) => streamEventHandler(event, updateMessage, setIsLoading),
-    },
-    );
+    });
   }
 
   return (
@@ -97,18 +99,23 @@ function App() {
         <ChatWindow
           messages={messages}
           isLoading={isLoading}
-          onSend={async (
-            textContent: string) => {
-            setMessages((history) => [...history, {
-              content: textContent,
-              sender: 'あなた',
-              segments: [{
-                type: 'text',
+          onSend={async (textContent: string) => {
+            setMessages((history) => [
+              ...history,
+              {
                 content: textContent,
-              }],
-            }]);
+                sender: 'あなた',
+                segments: [
+                  {
+                    type: 'text',
+                    content: textContent,
+                  },
+                ],
+              },
+            ]);
             await invoke({ message: textContent, sessionId });
-          }} />
+          }}
+        />
         {currentInterrupt && interruptResolve && (
           <InterruptModal
             interrupt={currentInterrupt}

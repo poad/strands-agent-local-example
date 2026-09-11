@@ -1,5 +1,5 @@
-import { logger } from '../logger.js';
 import { configureDotenvX } from '../env.js';
+import { logger } from '../logger.js';
 
 configureDotenvX();
 
@@ -25,7 +25,9 @@ let tokenCache: TokenCache | null = null;
  */
 const config = {
   /** OAuthトークンエンドポイントのURL。 */
-  endpoint: process.env.DATABRICKS_WORKSPACE_URL ? `${process.env.DATABRICKS_WORKSPACE_URL}/oidc/v1/token` : undefined,
+  endpoint: process.env.DATABRICKS_WORKSPACE_URL
+    ? `${process.env.DATABRICKS_WORKSPACE_URL}/oidc/v1/token`
+    : undefined,
   /** サービスプリンシパルのクライアントID（アプリケーションID）。 */
   clientId: process.env.DATABRICKS_OAUTH_CLIENT_ID,
   /** サービスプリンシパルのOAuthシークレット。 */
@@ -69,7 +71,7 @@ async function fetchAccessToken(): Promise<string | null> {
     const response = await fetch(config.endpoint, {
       method: 'POST',
       headers: {
-        'Authorization': `Basic ${credentials}`,
+        Authorization: `Basic ${credentials}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: 'grant_type=client_credentials&scope=all-apis',
@@ -82,7 +84,7 @@ async function fetchAccessToken(): Promise<string | null> {
       throw new Error();
     }
 
-    const data = await response.json() as { access_token: string; expires_in: number };
+    const data = (await response.json()) as { access_token: string; expires_in: number };
     const expiresAt = Date.now() + data.expires_in * 1000;
 
     tokenCache = {

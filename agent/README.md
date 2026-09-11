@@ -15,15 +15,15 @@
 
 agent/
 ├── src/
-│   ├── index.ts                          # エントリポイント（Hono サーバー、/invocations ハンドラ、SSE ストリーミング）
-│   ├── agent.ts                          # Strands Agent の生成（BedrockModel、システムプロンプト、ツール登録）
-│   ├── logger.ts                         # AWS Lambda Powertools ベースのロガー
-│   ├── types.ts                          # リクエストスキーマ（Zod）：`message` または `interruptResponses`
-│   ├── tools/
-│   │   └── aws-tool.ts                   # aws-knowledge-mcp-server への MCP クライアント／ツール一覧取得
-│   └── observability/
-│       ├── exporters.ts                  # OTel の Trace/Logs/Metrics エクスポーター初期化（Databricks OTLP/HTTP 送信）
-│       └── access-token-manager.ts       # Databricks OAuth M2M アクセストークンのメモリキャッシュ管理
+│ ├── index.ts # エントリポイント（Hono サーバー、/invocations ハンドラ、SSE ストリーミング）
+│ ├── agent.ts # Strands Agent の生成（BedrockModel、システムプロンプト、ツール登録）
+│ ├── logger.ts # AWS Lambda Powertools ベースのロガー
+│ ├── types.ts # リクエストスキーマ（Zod）：`message` または `interruptResponses`
+│ ├── tools/
+│ │ └── aws-tool.ts # aws-knowledge-mcp-server への MCP クライアント／ツール一覧取得
+│ └── observability/
+│ ├── exporters.ts # OTel の Trace/Logs/Metrics エクスポーター初期化（Databricks OTLP/HTTP 送信）
+│ └── access-token-manager.ts # Databricks OAuth M2M アクセストークンのメモリキャッシュ管理
 
 ## 実行方法
 
@@ -57,27 +57,27 @@ DATABRICKS_UC_TABLE_PREFIX=...
 
 `POST http://localhost:8080/invocations` で送信されるペイロードは以下のスキーマで検証されます。
 
-| パターン | フィールド | 型 | 説明 |
-| --- | --- | --- | --- |
-| 新規発話 | `message` | string | ユーザーからの入力メッセージ |
-| 割り込み応答 | `interruptResponses` | array | `interruptId` と `response` を含むオブジェクトの配列 |
+| パターン     | フィールド           | 型     | 説明                                                 |
+| ------------ | -------------------- | ------ | ---------------------------------------------------- |
+| 新規発話     | `message`            | string | ユーザーからの入力メッセージ                         |
+| 割り込み応答 | `interruptResponses` | array  | `interruptId` と `response` を含むオブジェクトの配列 |
 
 ### 応答（SSE イベント）
 
-| イベント | データ | 説明 |
-| --- | --- | --- |
-| `messageDelta` | `{ text: string }` | トークン単位のテキスト差分（ストリーミング中） |
-| `interrupt` | `{ interrupts: InterruptPayload[] }` | Agent Loop がユーザー入力待ちで停止（`interruptId`/`name`/`reason` を含む） |
-| `message` | `{ message: any }` | 最終的な応答メッセージ（AgentResult.lastMessage） |
+| イベント       | データ                               | 説明                                                                        |
+| -------------- | ------------------------------------ | --------------------------------------------------------------------------- |
+| `messageDelta` | `{ text: string }`                   | トークン単位のテキスト差分（ストリーミング中）                              |
+| `interrupt`    | `{ interrupts: InterruptPayload[] }` | Agent Loop がユーザー入力待ちで停止（`interruptId`/`name`/`reason` を含む） |
+| `message`      | `{ message: any }`                   | 最終的な応答メッセージ（AgentResult.lastMessage）                           |
 
 ## Observability（可観測性）
 
 以下の環境変数（`"true"` 文字列）により、OpenTelemetry の Trace・Logs・Metrics をそれぞれ有効化できます。有効化した場合、Databricks の OTLP/HTTP エンドポイント（Unity Catalog テーブル）へエクスポートされます。
 
-| 環境変数 | 説明 |
-| --- | --- |
-| `ENABLE_TRACING` | トレース有効化 |
-| `ENABLE_LOGS` | ログ有効化 |
+| 環境変数         | 説明             |
+| ---------------- | ---------------- |
+| `ENABLE_TRACING` | トレース有効化   |
+| `ENABLE_LOGS`    | ログ有効化       |
 | `ENABLE_METRICS` | メトリクス有効化 |
 
 Databricks 側の設定が不足している場合は Observability 機能をスキップし、通常どおりエージェントは動作します。

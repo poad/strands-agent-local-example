@@ -1,4 +1,5 @@
 import { History } from '../types/index.js';
+
 import {
   MainContainer,
   ChatContainer,
@@ -16,9 +17,9 @@ export function ChatWindow({
   isLoading,
   onSend,
 }: {
-  messages: History[],
-  isLoading: boolean,
-  onSend: (input: string) => Promise<void>
+  messages: History[];
+  isLoading: boolean;
+  onSend: (input: string) => Promise<void>;
 }) {
   const inputRef = useRef(null);
 
@@ -26,41 +27,33 @@ export function ChatWindow({
     <MainContainer>
       <ChatContainer>
         <MessageList>
-          {
-            messages.map((message, index) => (
-              <Message
-                key={`message-${index}`}
-                model={{
-                  sender: message.sender,
-                  direction: message.sender === 'あなた' ? 'incoming' : 'outgoing',
-                  position: 'normal',
-                }}>
-                <Message.CustomContent>
-                  <div>
-                    <Streamdown
-                      key={index}
-                      animated
-                      // plugins={{ code, mermaid, math, cjk }}
-                      isAnimating={true}
-                    >
-                      {message.content}
-                    </Streamdown>
-                  </div>
-                </Message.CustomContent>
-              </Message>
-            ))
-          }
-          {
-            isLoading ? <TypingIndicator content="thinking" /> : <></>
-          }
+          {messages.map((message, index) => (
+            <Message
+              key={`message-${index}`}
+              model={{
+                sender: message.sender,
+                direction: message.sender === 'あなた' ? 'incoming' : 'outgoing',
+                position: 'normal',
+              }}
+            >
+              <Message.CustomContent>
+                <div>
+                  <Streamdown
+                    key={index}
+                    animated
+                    // plugins={{ code, mermaid, math, cjk }}
+                    isAnimating={true}
+                  >
+                    {message.content}
+                  </Streamdown>
+                </div>
+              </Message.CustomContent>
+            </Message>
+          ))}
+          {isLoading ? <TypingIndicator content="thinking" /> : <></>}
         </MessageList>
-        <MessageInput
-          ref={inputRef}
-          placeholder="メッセージを入力..."
-          onSend={onSend}
-        />
+        <MessageInput ref={inputRef} placeholder="メッセージを入力..." onSend={onSend} />
       </ChatContainer>
     </MainContainer>
-
   );
 }
