@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.36.0",
-    "@dotenvx/dotenvx": "^2.37.0",
+    "@dotenvx/dotenvx": "^2.38.0",
     "@hono/node-server": "^2.1.5",
     "@modelcontextprotocol/client": "^2.3.1",
     "@opentelemetry/api": "^1.9.1",
