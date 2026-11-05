@@ -21,10 +21,12 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - pnpm@12.12.1
+  - pnpm@12.18.0
 
 overrides:
   chokidar: '>=5'
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
+  minimatch@>=7.0.0 <11.0.1: ^11.0.1
   semver: '>=7'
 
 trustPolicy: no-downgrade
