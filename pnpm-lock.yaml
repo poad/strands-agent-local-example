@@ -446,20 +446,20 @@ packages:
       '@middy/core':
         optional: true
 
-  '@aws-sdk/client-bedrock-runtime@3.1171.0':
-    resolution: {integrity: sha512-J7h82AeM+bxirSbueFwm+3yECzI/NLJOWd5E/A+AEVu5mj4alWXn8VQCWlNORlAhEv/HcCmz1B+KROI6I4/V/g==}
+  '@aws-sdk/client-bedrock-runtime@3.1172.0':
+    resolution: {integrity: sha512-yBaDQvzT93R2vCJ6xKSPhPVznO4Fgef9PmN2WHVr/VUEQbWOa6vpJAojVbDiJbzl2ShapE6lh+sSoMlaT4ZlJQ==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/client-firehose@3.1171.0':
-    resolution: {integrity: sha512-7skyj5Ix0lbIY+Fx4bAD45J/XBrlrhO6FqzmGNFeE+lupw6PjDgnHT/dTQ/GQmzPtnsAmYxzB+bHLqyx0m6FiA==}
+  '@aws-sdk/client-firehose@3.1172.0':
+    resolution: {integrity: sha512-1ovnsW0kSVJGjTF7qivoE1rU7cqakKgTbUe3QF6fr4Rsa+CMdPVueOC3mT77y4dIOtlf5TQysVFN+8oUGobPXg==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/client-kinesis@3.1171.0':
-    resolution: {integrity: sha512-aVOnyEeFmaDT/oC2pkRggdTuhm9/X0EcXuZXvs9BvJlqu+AJTZHqGXGYnzOLkHB5yavMteRl9h2YxXGjnDnp0g==}
+  '@aws-sdk/client-kinesis@3.1172.0':
+    resolution: {integrity: sha512-lxfWVhV+sOlV09Gx0oTm2sIJFCzSPk/BhSuc+iPZyHr8pQQADykKrEm9oN6HfyWMMF7LrdKhOaCuJUITCa2rqA==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/client-personalize-events@3.1171.0':
-    resolution: {integrity: sha512-bXMYSH1mt5JJPSFJ2wxOhBVgf6QVkR+xqovq8f0LwNR1JNgtN7fKK3p+1hPf9BolQk31vu9zeZu06KIIjuD8YQ==}
+  '@aws-sdk/client-personalize-events@3.1172.0':
+    resolution: {integrity: sha512-7e8JpUH1oVRQV+n2OgvArsvXdRALympDmaMDHOqTUAcSrC42Jevgc0G/amSn3Gj/N/KCRMM2oiwqBDt/9XPZhQ==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.981.0':
@@ -522,8 +522,8 @@ packages:
     resolution: {integrity: sha512-ngJ8mxXqtQ9mnp7QV6TWKJCxkpjVfPWxKQSc2FYhCyCfOVFIGdFv7P+/RqVffFrJAorwBPpktnv32gNlcEgF4g==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/token-providers@3.1171.0':
-    resolution: {integrity: sha512-2BUCF7mA5py/cZEL/AIByNAgdgUQjcG4M9ABwzPg24WJO5C1LpLCqPT9Vv0TWh9S49XYZc1N9T1J7958ivLKcw==}
+  '@aws-sdk/token-providers@3.1172.0':
+    resolution: {integrity: sha512-3wXmYZyVWJev9Ha9TgahR75pUVoAs2QFp0XilikuBbFiln1TgSaVmwPDyXWL74T2dO04nTL+lZV5AcIWPyQnVA==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/types@3.975.1':
@@ -2269,8 +2269,8 @@ packages:
   dijkstrajs@1.0.3:
     resolution: {integrity: sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA==}
 
-  electron-to-chromium@1.5.488:
-    resolution: {integrity: sha512-Uox8y5IeRGB/uXNMNSPfWaiI5/8d/2XG125oc+f2C5JniHcoMxsbCXcVFRZnIsdrgPwZQ6/k5SbSxhBirqQPuA==}
+  electron-to-chromium@1.5.490:
+    resolution: {integrity: sha512-I0dPyEsiaYAlbGJlr0SdRRGSWk9BpOz8AIo/4f93A6bAGuN3YafmT71rpss72SA05isaAkcAOYcW0F0H48om4Q==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2375,8 +2375,8 @@ packages:
   hast-util-parse-selector@4.0.0:
     resolution: {integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==}
 
-  hast-util-raw@9.2.0:
-    resolution: {integrity: sha512-1zVq3M9AlZiBZ4mlMPnLtkK2rdd+I8VhmFLNLb//XJm6xA2AVH2tz19EHy25RgRWut6z6FpTARAs7P8rnmRJUQ==}
+  hast-util-raw@9.2.1:
+    resolution: {integrity: sha512-8P0PLAr5C7xCRb+tkhUTV4v6OSNcnccKwjBkH/r19R5CkVCgTWlv4vmTkxFH1CVCA2UJOvOPQdBBMC3c6qnuOg==}
 
   hast-util-sanitize@5.0.2:
     resolution: {integrity: sha512-3yTWghByc50aGS7JlGhk61SPenfE/p1oaFeNwkOOyrscaOkMGrcW9+Cy/QAIOBpZxP1yqDIzFMR0+Np0i0+usg==}
@@ -2455,8 +2455,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  jose@6.2.17:
-    resolution: {integrity: sha512-wOuK9V1yujQFH5S0ZWmLcDZN7+IKh9bUCC2ZPCf2HDlol3WWHy+PPyNjEI75FXRLMp3vDKQcupP59xhVU95hcg==}
+  jose@6.2.18:
+    resolution: {integrity: sha512-doV4thUwgkrycJH4yLeqwTGIIZphHl+pk7CPReuMIhYhncmgzdko85MaCG4YQFTxqMFr1/oEH32tZuKKovcDEg==}
 
   js-cookie@3.0.8:
     resolution: {integrity: sha512-yeJd4aNAdYZQjaon2bpD/Gb0B/omw7HQOsynXXcOiWVCacbBcPlgn8S/d1X6blFSaHao7ozqtW7NZW19xpCtIw==}
@@ -3092,8 +3092,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  source-map-js@1.2.2:
-    resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
+  source-map-js@1.2.3:
+    resolution: {integrity: sha512-xj+WrAkyv5Qp+t7r9N5HvCBu7g1qOe6CKRNpq22X1GGcPEQADFU54v5qsPVs3/vrUFQ7XivFrcAVKA2stI0kWA==}
     engines: {node: '>=0.10.0'}
 
   space-separated-tokens@2.0.2:
@@ -3369,9 +3369,9 @@ snapshots:
   '@aws-amplify/analytics@7.2.0(@aws-amplify/core@6.19.3)':
     dependencies:
       '@aws-amplify/core': 6.19.3
-      '@aws-sdk/client-firehose': 3.1171.0
-      '@aws-sdk/client-kinesis': 3.1171.0
-      '@aws-sdk/client-personalize-events': 3.1171.0
+      '@aws-sdk/client-firehose': 3.1172.0
+      '@aws-sdk/client-kinesis': 3.1172.0
+      '@aws-sdk/client-personalize-events': 3.1172.0
       '@smithy/util-utf8': 2.0.0
       tslib: 2.9.1
 
@@ -3524,14 +3524,14 @@ snapshots:
     dependencies:
       '@aws-lambda-powertools/commons': 2.36.0
 
-  '@aws-sdk/client-bedrock-runtime@3.1171.0':
+  '@aws-sdk/client-bedrock-runtime@3.1172.0':
     dependencies:
       '@aws-sdk/core': 3.981.0
       '@aws-sdk/credential-provider-node': 3.972.97
       '@aws-sdk/eventstream-handler-node': 3.972.42
       '@aws-sdk/middleware-eventstream': 3.972.38
       '@aws-sdk/middleware-websocket': 3.972.66
-      '@aws-sdk/token-providers': 3.1171.0
+      '@aws-sdk/token-providers': 3.1172.0
       '@aws-sdk/types': 3.975.1
       '@smithy/core': 3.41.0
       '@smithy/fetch-http-handler': 5.8.1
@@ -3539,7 +3539,7 @@ snapshots:
       '@smithy/types': 4.20.0
       tslib: 2.9.1
 
-  '@aws-sdk/client-firehose@3.1171.0':
+  '@aws-sdk/client-firehose@3.1172.0':
     dependencies:
       '@aws-sdk/core': 3.981.0
       '@aws-sdk/credential-provider-node': 3.972.97
@@ -3550,7 +3550,7 @@ snapshots:
       '@smithy/types': 4.20.0
       tslib: 2.9.1
 
-  '@aws-sdk/client-kinesis@3.1171.0':
+  '@aws-sdk/client-kinesis@3.1172.0':
     dependencies:
       '@aws-sdk/core': 3.981.0
       '@aws-sdk/credential-provider-node': 3.972.97
@@ -3561,7 +3561,7 @@ snapshots:
       '@smithy/types': 4.20.0
       tslib: 2.9.1
 
-  '@aws-sdk/client-personalize-events@3.1171.0':
+  '@aws-sdk/client-personalize-events@3.1172.0':
     dependencies:
       '@aws-sdk/core': 3.981.0
       '@aws-sdk/credential-provider-node': 3.972.97
@@ -3718,7 +3718,7 @@ snapshots:
       '@smithy/types': 4.20.0
       tslib: 2.9.1
 
-  '@aws-sdk/token-providers@3.1171.0':
+  '@aws-sdk/token-providers@3.1172.0':
     dependencies:
       '@aws-sdk/core': 3.981.0
       '@aws-sdk/nested-clients': 3.998.3
@@ -4032,7 +4032,7 @@ snapshots:
       cross-spawn: 7.0.6
       eventsource: 3.0.7
       eventsource-parser: 3.1.1
-      jose: 6.2.17
+      jose: 6.2.18
       pkce-challenge: 5.0.1
       zod: 4.6.7
 
@@ -4837,7 +4837,7 @@ snapshots:
 
   '@strands-agents/sdk@1.25.0(@modelcontextprotocol/client@2.4.0)(@opentelemetry/api@1.10.0)(@opentelemetry/exporter-metrics-otlp-http@0.301.2(@opentelemetry/api@1.10.0))(@opentelemetry/exporter-trace-otlp-http@0.301.2(@opentelemetry/api@1.10.0))(@opentelemetry/resources@3.1.1(@opentelemetry/api@1.10.0))(@opentelemetry/sdk-metrics@3.1.1(@opentelemetry/api@1.10.0))(@opentelemetry/sdk-trace-base@2.12.1(@opentelemetry/api@1.10.0))(@opentelemetry/sdk-trace-node@2.12.1(@opentelemetry/api@1.10.0))(@smithy/types@4.20.0)(zod@4.6.7)':
     dependencies:
-      '@aws-sdk/client-bedrock-runtime': 3.1171.0
+      '@aws-sdk/client-bedrock-runtime': 3.1172.0
       '@modelcontextprotocol/client': 2.4.0
       '@modelcontextprotocol/ext-tasks': 0.2.3(@modelcontextprotocol/client@2.4.0)
       '@opentelemetry/api': 1.10.0
@@ -5035,7 +5035,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.11.38
       caniuse-lite: 1.0.30001826
-      electron-to-chromium: 1.5.488
+      electron-to-chromium: 1.5.490
       node-releases: 2.0.65
       update-browserslist-db: 1.4.0(browserslist@4.29.6)
 
@@ -5119,7 +5119,7 @@ snapshots:
 
   dijkstrajs@1.0.3: {}
 
-  electron-to-chromium@1.5.488: {}
+  electron-to-chromium@1.5.490: {}
 
   emoji-regex@8.0.0: {}
 
@@ -5233,7 +5233,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.5
 
-  hast-util-raw@9.2.0:
+  hast-util-raw@9.2.1:
     dependencies:
       '@types/hast': 3.0.5
       '@types/unist': 3.0.3
@@ -5342,7 +5342,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  jose@6.2.17: {}
+  jose@6.2.18: {}
 
   js-cookie@3.0.8: {}
 
@@ -5895,7 +5895,7 @@ snapshots:
     dependencies:
       nanoid: 3.3.20
       picocolors: 1.1.1
-      source-map-js: 1.2.2
+      source-map-js: 1.2.3
 
   prop-types@15.8.1:
     dependencies:
@@ -5973,7 +5973,7 @@ snapshots:
   rehype-raw@7.0.0:
     dependencies:
       '@types/hast': 3.0.5
-      hast-util-raw: 9.2.0
+      hast-util-raw: 9.2.1
       vfile: 6.0.3
 
   rehype-sanitize@6.0.0:
@@ -6071,7 +6071,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  source-map-js@1.2.2: {}
+  source-map-js@1.2.3: {}
 
   space-separated-tokens@2.0.2: {}
 
